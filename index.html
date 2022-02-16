@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DATAWAREHOUSING AND MINING</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Content -->
+			<div id="content">
+				<div class="inner">
+
+					<!-- Post -->
+						<article class="box post post-excerpt">
+							<header>
+								<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+								<h2><a href="#">DATA WAREHOUSING, BUSINESS ANALYSIS AND ON-LINE 
+									ANALYTICAL PROCESSING (OLAP) </a></h2>
+								<p>Basic Concepts - Data Warehousing Components – Building a Data Warehouse – Database 
+									Architectures for Parallel Processing – Parallel DBMS Vendors - Multidimensional Data Model –
+									Data Warehouse Schemas for Decision Support, Concept Hierarchies -Characteristics of OLAP 
+									Systems – Typical OLAP Operations, OLAP and OLTP. 
+									Book Reference: Alex Berson and Stephen J.Smith, ―Data Warehousing, Data Mining & OLA, 
+									Tata McGraw – Hill Edition, 35th Reprint 2016.<br><br>
+
+									<b>1.1 Basic Concepts</b>
+									
+									 </p>
+							</header>
+							<div class="info">
+								<!--
+									Note: The date should be formatted exactly as it's shown below. In particular, the
+									"least significant" characters of the month should be encapsulated in a <span>
+									element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+									Oh, and if you don't need a date for a particular page or post you can simply delete
+									the entire "date" element.
+
+								-->
+								
+								<!--
+									Note: You can change the number of list items in "stats" to whatever you want.
+								-->
+								<ul class="stats">
+									<li><a href="#" class="icon fa-comment">1</a></li>
+							
+								</ul>
+							</div>
+					
+							<p>
+								A Data warehouse (DWH) is a subject-oriented, integrated, time-variant and nonvolatile 
+									collection of data in support of management’s decision making process. The above four 
+									characteristics of data warehouse are described below<br>
+									• Subject-Oriented: A Data warehouse is organized around major subjects such as 
+									customer, supplier, product and sales. Data warehouse focuses on the modeling and 
+									analysis of data for decision makers.<br>
+									• Integrated: A Data warehouse constructed by integrating multiple heterogeneous sources 
+									such as relational databases, flat files and on line transaction records.<br>
+									• Time-variant: Data are stored to provide information from a historical perspective. 
+									Example: the past 5 to 10 years.<br>
+									• Non-volatile: A Data warehouse is always a physically separate store of data transformed 
+									from the application data found in the operational environment. Therefore, it does not 
+									require transaction processing, recovery and concurrency control mechanisms. DWH 
+									requires only two operation:<br>
+									- Initial loading of data.<br>
+									- Access of data<br>
+									The data warehouse architecture is based on a relational database management system server 
+									that functions as the central repository for informational data.<br> Operational data and processing is completely separated from data warehouse processing. This 
+									central information repository is surrounded by a number of key components designed to make the 
+									entire environment functional, manageable and accessible by both the operational systems that 
+									source data into the warehouse and by end-user query and analysis tools.<br>
+									The source data for the warehouse is coming from the operational applications. As the data 
+									enters the warehouse, it is cleaned up and transformed into integrated into DW. The transformation 
+									process may involve conversion, summarization, filtering and condensation of data. In order to 
+									store historical component, the data warehouse must be capable of holding and managing large 
+									volumes of data, coming from different systems in different data formats over many years.
+									The 7 major components of data warehousing are described below.<br><br>
+									<b>Data warehousing Components</b><br> Data Warehouse is an environment, not a product. A Data warehouse is a subject-oriented, 
+									integrated, time-variant, nonvolatile Collection of data that supports management decision making 
+									process.<br> 
+									A RDBMS (Relational database management system) server serves as the central repository 
+									of DWH data. The source of data is operational applications. As the data enter, it cleaned, 
+									transformed, and integrated into DWH <br><br> <b>Overall Architecture of a DWH</b><br> <a href="#" class="image featured"><img src="images/1.jpeg" alt="" /></a> <br><br> <b> Data Warehouse Database</b><br> The central data warehouse database is the cornerstone of the data warehousing 
+									environment. This database is usually implemented on relational database management system 
+									(RDBMS) technology. However, they are optimized for transactional database processing. Data 
+									warehouse attributes include very large database size, ad hoc query processing needs and the need 
+									for flexible user view creation such as aggregation, multi-table joins and drill-downs.<br> These approaches include:<br>
+							
+									• Parallel relational database designs for scalability that include shared-memory, shared disk, 
+									or shared-nothing models implemented on various multiprocessor configurations 
+									(symmetric multiprocessors or SMP, massively parallel processors or MPP, and/or clusters 
+									of uni or multiprocessors).<br>
+									• An innovative approach to speed up a traditional RDBMS by using new index structures 
+									to bypass relational table scans.<br>
+									• Multidimensional databases (MDDBs) that are based on proprietary database technology; 
+									conversely, a dimensional data model can be implemented using a familiar RDBMS.<br><br> <b>Sourcing, Acquisition, Cleanup and Transformation Tools</b><br> A significant portion of the implementation effort is spent extracting data from operational 
+									systems and putting it in a format suitable for informational applications that run off the data 
+									warehouse.
+									The data sourcing, cleanup, transformation and migration tools perform conversions, 
+									summarizations, key changes, structural changes and condensations needed to transform disparate 
+									data into information that can be used by the decision support tool. The major functions of the 
+									tools are:-<br> • Removing unwanted data from operational databases<br>
+									• Converting to common data names and definitions<br>
+									• Establishing defaults for missing data<br>
+									• Accommodating source data definition changes<br>
+									• Calculating summaries and derived data.<br> The data sourcing, cleanup, extract, transformation and migration tools have to deal with some 
+									significant issues including:<br>
+									• Database heterogeneity. Different DBMS follow different data models, data access 
+									language, data navigation, operations, concurrency, integrity, recovery etc.<br>
+									• Data heterogeneity. Data are defined and used in different models – homonyms, 
+									synonyms, unit compatibility (U.S. vs metric), different attributes for the same entity, and 
+									different ways of modeling the same fact.<br><br> <b>Metadata</b><br> Metadata is data about data that describes the data warehouse. It is used for building, 
+									maintaining, managing and using the data warehouse.<br> 
+									Metadata can be classified into:<br>
+									• Technical Metadata, which contains information about warehouse data for use by 
+									warehouse designers and administrators when carrying out warehouse development and 
+									management tasks.<br>
+									• Business Metadata, which contains information that gives users an easy-to-understand 
+									perspective of the information stored in the data warehouse.<br><br> <b>Access Tools</b><br> The principal purpose of data warehousing is to provide information to business users 
+									for strategic decision-making. These users interact with the data warehouse using front-end tools. 
+									Many of these tools require an information specialist, although many end users develop expertise 
+									in the tools.<br>
+									Tools fall into five main categories:<br>
+									1. Query And Reporting Tools<br>
+									2. Application Development Tools<br>
+									3. Online Analytical Processing Tools<br>
+									4. Data Mining Tools<br>
+									5. Data Visualization Tools.<br><br> <b><i>1. Query and Reporting tools</i></b><br> Query and Reporting tools comprise of two groups - reporting tools and managed query 
+									tools.<br>
+									• Reporting tools<br>
+									- Reporting tools include production reporting tools and report writers.<br> - Production reporting tools let companies generate regular operational reports or support 
+									high-volume batch jobs such as calculating and printing paychecks.<br> 
+									- Report writers, are inexpensive desktop tools designed for end-users.<br> • Managed query tools<br> 
+									- Managed query tools shield end users from the complexities of SQL and database 
+									structures by inserting a meta layer between users and the database.<br>
+									- These tools are designed for easy-to-use, point-and-click operations that either accept 
+									SQL or generate SQL database queries.<br><br> <i><b>2. Application Development Tools</b></i><br> • The analytical needs of the data warehouse user community exceed the built-in capabilities 
+									of query and reporting tools.<br> 
+									• In these cases, organizations will often rely on the tried-and-true approach of in-house 
+									application development using GUI (graphical user interface) development environments 
+									such as PowerBuilder, Visual Basic, Forte etc.<br>
+									• These application development platforms integrate well with popular OLAP tools and 
+									access all major database systems including Oracle, Sybase, and Informix.<br><br> <i><b>3. OLAP Tools</b></i><br> • OLAP tools are based on the concepts of dimensional data models and allow users to 
+									analyze the data using elaborate, multidimensional views.<br>
+									• Examples: The commercial application for marketing, sales etc – e.g. region wise, product 
+									wise quarterly sales report.<br><br> <i><b>4. Data Mining Tools</b></i><br> • Data mining is the process of discovering meaningful hidden relationships, patterns and 
+									trends by digging into large amounts of data stored in the warehouse using artificial 
+									intelligence, statistical and mathematical techniques.<br>
+									• Data Mining is used to perform Association, Classification, Clustering etc.<br> • The opportunities presented by discovering hidden, previously unknown, and valuable 
+									facts help is “strategic” decision making by top managers<br> <i><b>5. Data Visualization Tools
+									</b></i><br> • It is a method of presenting the output using tools in such way that the problem and solution 
+									are clearly visible to the domain experts, or any observers.<br>
+									• It represents 2D or 3D, color images, sound virtual reality.<br><br> <b>Data Marts</b><br> • Data marts are presented as an alternative to a data warehouse that takes significantly less 
+									time and money to build.<br>
+									• A data store that is subsidiary to a data warehouse of integrated data.<br>
+									• The data mart deals with a partition of data (often called a subject area) that is created for 
+									the use of a dedicated group of users. A data mart can be a set of denormalized, 
+									summarized, or aggregated data.<br>
+									• The data mart is a physically separate store of data and is resident on separate database 
+									server, often a local area network serving a dedicated user group.<br>
+									There are two types of Data Marts. They are<br> <i>1. Dependent data Mart </i>- their data is sourced from same the data warehouse, have a high 
+									value because no matter how they are deployed and how many different enabling 
+									technologies are used, different users are all accessing the information views derived from 
+									the single integrated version of the data.<br>
+									<i>2. Independent data mart</i> – every group in the organization build their own data mart, create 
+									an environment where multiple operational systems feed multiple non-integrated data 
+									marts that are often overlapping in data content, job scheduling, connectivity and 
+									management.<br><br> <b>Data Warehouse Administration and Management</b><br> Data warehouses tend to be as much as 4 times as large as related operational databases, 
+									reaching terabytes in size. They are not synchronized in real time to the associated operational data 
+									but are updated as often as once a day if the application requires it.<br> The data warehouse products include gateways to transparently access multiple enterprise 
+									data sources without having to rewrite applications to interpret and utilize the data.<br>
+									In a heterogeneous data warehouse environment, the various databases reside on disparate 
+									systems, thus requiring inter-networking tools.<br> Managing data warehouses includes:-<br>
+									• Security and priority management<br>
+									• Monitoring updates from the multiple sources<br> 
+									• Data quality checks<br>
+									• Managing and updating meta data; auditing<br> 
+									• Reporting data warehouse usage and status<br> 
+									• Purging data<br>
+									• Replicating<br> 
+									• Sub setting and distributing data<br> 
+									• Backup and recovery and<br>
+									• Data warehouse storage management.<br><br> <b>Information Delivery System</b><br> The information delivery component is used to enable the process of subscribing for data 
+									warehouse information and having it delivered to one or more destinations according to some userspecified scheduling algorithm.
+									Delivery of information may be based on time of day or on the completion of an external 
+									event.<br>
+									Once the data warehouse is installed, the users don’t have to be aware of its location and 
+									maintenance. All they need is the report or an analytical view of data at a specific point in time.<br> <b><i>Note: With internet or intranet the delivery system enables information to end users via web.
+									</i></b><br><br> <b>Building a Data warehouse</b><br> There are two reasons why organizations consider data warehousing a critical need. In other 
+									words, there are two factors that drive you to build and use data warehouse.<br> 
+									They are:<br>
+									• Business factors: Business users want to make decision quickly and correctly using all 
+									available data.<br>
+									• Technological factors:<br> 
+									- To address the incompatibility of operational data stores<br> 
+									- IT infrastructure is changing rapidly. Its capacity is increasing and cost is decreasing 
+									so that building a data warehouse is easy.<br> 
+									There are several things to be considered while building a successful data warehouse<br>
+									- Business Consideration<br>
+									- Design Consideration<br>
+									- Performance Consideration<br>
+									- Technical Consideration<br>
+									- Implementation Consideration<br><br> <b>Business Considerations:
+									</b><br> Organizations interested in development of a data warehouse can choose one of the 
+									following two approaches:<br>
+									1. Top - Down Approach<br> 
+									2. Bottom - Up Approach<br><br> <b>Top-Down Approach:</b><br>
+									The organization develops an enterprise data warehouse (Central data repository) with 
+									subset data marts. The Enterprise Data Warehouse (EDW) contains data in more detailed level.<br> <i>Advantages:</i><br>
+									1. Flexibility to be used by multiple departments.<br> 2. Flexibility to cater for future requirements.<br> <i>Disadvantages of storing data at the detail level are</i><br> 
+									1. The complexity of design increases with increasing level of detail.<br>
+									2. It takes large amount of space to store data at detail level, hence increased cost<br> We should implement the top-down approach when<br> 
+									1. The business has complete clarity on all or multiple subject areas data warehouse 
+									requirements.<br>
+									2. The business is ready to invest considerable time and money<br><br> <b>Bottom up Approach:</b><br>
+									First develop individual data marts, which are then integrated into the enterprise data 
+									warehouse.<br>
+									The bottom up approach helps us incrementally build the warehouse by developing and 
+									integrating data marts as and when the requirements are clear. We don’t have to wait for knowing 
+									the overall requirements of the warehouse.<br> 
+									We should implement the bottom up approach when<br> 
+									1. We have initial cost and time constraints.<br> 
+									2. The complete warehouse requirements are not clear.<br><br> <b>Design considerations:
+									</b><br> To be a successful data warehouse designer must adopt a holistic approach that is 
+									considering all data warehouse components as parts of a single complex system, and take into 
+									account all possible data sources and all known usage requirements.<br>
+									Most successful data warehouses that meet these requirements have these common 
+									characteristics:<br>
+									• They are based on a dimensional model<br>
+									• Contain historical and current data<br>
+									• Include both detailed and summarized data<br> 
+									• Consolidate disparate data from multiple sources while retaining consistency<br> Data warehouse is difficult to build due to the following reason:<br> 
+									• Heterogeneity of data sources<br> 
+									• Use of historical data<br>
+									• Growing nature of data base<br> 
+									Data warehouse design approach must be business driven, continuous and iterative<br> 
+									engineering approach. In addition to the general considerations, the following specific points are 
+									relevant to the data warehouse design:<br><br> <b>Data Content</b><br>
+									The content and structure of the data warehouse are reflected in its data model. The data 
+									model is the template that describes how information will be organized within the integrated 
+									warehouse framework. The data warehouse data must be as detailed as necessary. It must be 
+									formatted, cleaned and transformed to fit the warehouse data model.<br>
+									<b>Metadata</b><br>
+									It defines the location and contents of data in the warehouse. Meta data is searchable by 
+									users to find definitions or subject areas. In other words, it must provide decision support oriented 
+									pointers to warehouse data and thus provides a logical link between warehouse data and decision 
+									support applications.<br>
+									<b>Data Distribution</b><br>
+									One of the biggest challenges when designing a data warehouse is the data placement and 
+									distribution strategy. Data volumes continue to grow in nature. Therefore, it becomes necessary to 
+									know how the data should be divided across multiple servers and which users should get access to 
+									which types of data. The data can be distributed based on the subject area, location 
+									(geographical region), or time (current, month, year).<br> <b>Tools</b><br>
+									A number of tools are available that are specifically designed to help in the implementation 
+									of the data warehouse. All selected tools must be compatible with the given data warehouse 
+									environment and with each other.<br> All tools must be able to use a common Meta data repository.
+									Nine decisions in the design of a data warehouse<br> 
+									The following nine-step method is followed in the design of a data warehouse:<br> 
+									1. Choosing the subject matter of a particular data mart<br>
+									2. Deciding exactly what a fact table record represents<br> 
+									3. Identifying and conforming the dimensions<br> 
+									4. Choosing the facts<br>
+									5. Storing pre calculations in the fact table<br> 
+									6. Rounding out the dimension table<br> 
+									7. Choosing the duration of the db<br> 
+									8. The need to track slowly changing dimensions<br> 
+									9. Deciding the query priorities and query models<br>
+									When the first three steps are correctly implemented the designers can attack the last 6 
+									steps easily<br> 
+									
+									
+									
+							</p> 
+							<!--
+							<p>
+								Striped is released for free under the <a href="http://html5up.net/license">Creative Commons Attribution license</a> so feel free to use it for personal projects
+								or even commercial ones &ndash; just be sure to credit <a href="http://html5up.net">HTML5 UP</a> for the design. If you like what you see here, be sure to check out
+								<a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/ajlkn">Twitter</a> for new releases and updates.
+							</p>
+						</article>
+						-->
+
+					<!-- Post -->
+
+					<!--
+						<article class="box post post-excerpt">
+							<header>
+								<h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
+								<p>Feugiat interdum sed commodo ipsum consequat dolor nullam metus</p>
+							</header>
+							<div class="info">
+								<span class="date"><span class="month">Jul<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
+								<ul class="stats">
+									<li><a href="#" class="icon fa-comment">16</a></li>
+									<li><a href="#" class="icon fa-heart">32</a></li>
+									<li><a href="#" class="icon brands fa-twitter">64</a></li>
+									<li><a href="#" class="icon brands fa-facebook-f">128</a></li>
+								</ul>
+							</div>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<p>
+								Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
+								Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore.
+								Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
+								Nunc nulla velit, fermentum quis interdum quis, convallis eu sapien. Integer sed ipsum ante.
+							</p>
+						</article>
+						-->
+
+					<!-- Pagination -->
+						<div class="pagination">
+							<!--<a href="#" class="button previous">Previous Page</a>-->
+							<div class="pages">
+								<a href="#" class="active">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<span>&hellip;</span>
+								<a href="#">20</a>
+							</div>
+							<a href="#" class="button next">Next Page</a>
+						</div>
+
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="#">NOTES</a></h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="#">Latest Post</a></li>
+							<li><a href="#">Archives</a></li>
+							<li><a href="#">About Me</a></li>
+							<li><a href="#">Contact Me</a></li>
+						</ul>
+					</nav>
+
+				<!-- Search -->
+					<section class="box search">
+						<form method="post" action="#">
+							<input type="text" class="text" name="search" placeholder="Search" />
+						</form>
+					</section>
+
+				<!-- Text -->
+				<!--
+					<section class="box text-style1">
+						<div class="inner">
+							<p>
+								<strong>Striped:</strong> A free and fully responsive HTML5 site
+								template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
+							</p>
+						</div>
+					</section>
+                -->
+				<!-- Recent Posts -->
+				<!--
+					<section class="box recent-posts">
+						<header>
+							<h2>Recent Posts</h2>
+						</header>
+						<ul>
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li><a href="#">Feugiat nisl aliquam</a></li>
+							<li><a href="#">Sed dolore magna</a></li>
+							<li><a href="#">Malesuada commodo</a></li>
+							<li><a href="#">Ipsum metus nullam</a></li>
+						</ul>
+					</section>
+				-->
+
+				<!-- Recent Comments -->
+				<!--
+					<section class="box recent-comments">
+						<header>
+							<h2>Recent Comments</h2>
+						</header>
+						<ul>
+							<li>case on <a href="#">Lorem ipsum dolor</a></li>
+							<li>molly on <a href="#">Sed dolore magna</a></li>
+							<li>case on <a href="#">Sed dolore magna</a></li>
+						</ul>
+					</section>
+				-->
+                
+				<!-- Calendar -->
+				<!--
+					<section class="box calendar">
+						<div class="inner">
+							<table>
+								<caption>July 2014</caption>
+								<thead>
+									<tr>
+										<th scope="col" title="Monday">M</th>
+										<th scope="col" title="Tuesday">T</th>
+										<th scope="col" title="Wednesday">W</th>
+										<th scope="col" title="Thursday">T</th>
+										<th scope="col" title="Friday">F</th>
+										<th scope="col" title="Saturday">S</th>
+										<th scope="col" title="Sunday">S</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="4" class="pad"><span>&nbsp;</span></td>
+										<td><span>1</span></td>
+										<td><span>2</span></td>
+										<td><span>3</span></td>
+									</tr>
+									<tr>
+										<td><span>4</span></td>
+										<td><span>5</span></td>
+										<td><a href="#">6</a></td>
+										<td><span>7</span></td>
+										<td><span>8</span></td>
+										<td><span>9</span></td>
+										<td><a href="#">10</a></td>
+									</tr>
+									<tr>
+										<td><span>11</span></td>
+										<td><span>12</span></td>
+										<td><span>13</span></td>
+										<td class="today"><a href="#">14</a></td>
+										<td><span>15</span></td>
+										<td><span>16</span></td>
+										<td><span>17</span></td>
+									</tr>
+									<tr>
+										<td><span>18</span></td>
+										<td><span>19</span></td>
+										<td><span>20</span></td>
+										<td><span>21</span></td>
+										<td><span>22</span></td>
+										<td><a href="#">23</a></td>
+										<td><span>24</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">25</a></td>
+										<td><span>26</span></td>
+										<td><span>27</span></td>
+										<td><span>28</span></td>
+										<td class="pad" colspan="3"><span>&nbsp;</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				
+                -->
+				<!-- Copyright -->
+				<!--
+					<ul id="copyright">
+						<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+			-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+
+	</body>
+</html>
